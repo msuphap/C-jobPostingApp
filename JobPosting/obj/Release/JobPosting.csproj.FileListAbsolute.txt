@@ -1,0 +1,6 @@
+C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\bin\Release\JobPosting.exe.config
+C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\bin\Release\JobPosting.exe
+C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\bin\Release\JobPosting.pdb
+C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\obj\Release\JobPosting.csproj.CoreCompileInputs.cache
+C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\obj\Release\JobPosting.exe
+C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\obj\Release\JobPosting.pdb
