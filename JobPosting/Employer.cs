@@ -8,12 +8,25 @@ namespace JobPosting
 {
     class Employer
     {
+        private static int lastEmployerID = 0;
+
         #region Properties
+        public int EmployerID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string CompanyName { get; set; }
         public string Email { get; set; }
         public int Phone { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime DeleteDate { get; set; }
+        #endregion
+
+        #region Constructors
+        public Employer()
+        {
+            EmployerID = ++lastEmployerID;
+            CreateDate = DateTime.UtcNow;
+        }
         #endregion
 
         #region Method
