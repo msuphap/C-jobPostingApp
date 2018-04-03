@@ -8,7 +8,7 @@ namespace JobPosting
 {
     class Employer
     {
-        private static int lastEmployerID = 0;
+        private static int LastEmployerID = 0;
 
         #region Properties
         public int EmployerID { get; set; }
@@ -24,8 +24,21 @@ namespace JobPosting
         #region Constructors
         public Employer()
         {
-            EmployerID = ++lastEmployerID;
+            EmployerID = ++LastEmployerID;
             CreateDate = DateTime.UtcNow;
+        }
+
+        public Employer(string username, string password) : this()
+        {
+            Username = username;
+            Password = password;
+        }
+
+        public Employer(string companyName, string email, int phone) : this()
+        {
+            CompanyName = companyName;
+            Email = email;
+            Phone = phone;
         }
         #endregion
 

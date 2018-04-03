@@ -8,11 +8,32 @@ namespace JobPosting
 {
     class JobList
     {
+        private static int LastJobID = 0;
+
         #region Properties
+        public int JobID { get; set; }
         private string Title { get; set; }
         private string JobDescription { get; set; }
         private string City { get; set; }
         private string State { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime DeleteDate { get; set; }
+        #endregion
+
+        #region Constructors
+        public JobList()
+        {
+            JobID = ++LastJobID;
+            CreateDate = DateTime.UtcNow;
+        }
+
+        public JobList(string title, string jobDescription, string city, string state) : this()
+        {
+            Title = title;
+            JobDescription = jobDescription;
+            City = city;
+            State = state;
+        }
         #endregion
 
         #region Method
