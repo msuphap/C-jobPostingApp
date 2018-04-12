@@ -11,13 +11,13 @@ namespace JobPosting
         private static int LastJobID = 0;
 
         #region Properties
-        public int JobID { get; set; }
+        public int JobID { get; private set; }
         private string Title { get; set; }
         private string JobDescription { get; set; }
         private string City { get; set; }
         private string State { get; set; }
-        public DateTime CreateDate { get; set; }
-        public DateTime DeleteDate { get; set; }
+        public DateTime CreateDate { get; private set; }
+        public DateTime DeleteDate { get; private set; }
         #endregion
 
         #region Constructors

@@ -11,14 +11,14 @@ namespace JobPosting
         private static int LastEmployerID = 0;
 
         #region Properties
-        public int EmployerID { get; set; }
+        public int EmployerID { get; private set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string CompanyName { get; set; }
         public string Email { get; set; }
         public int Phone { get; set; }
-        public DateTime CreateDate { get; set; }
-        public DateTime DeleteDate { get; set; }
+        public DateTime CreateDate { get; private set; }
+        public DateTime DeleteDate { get; private set; }
         #endregion
 
         #region Constructors
