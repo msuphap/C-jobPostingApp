@@ -12,10 +12,11 @@ namespace JobPosting
 
         #region Properties
         public int JobID { get; private set; }
-        private string Title { get; set; }
-        private string JobDescription { get; set; }
-        private string City { get; set; }
-        private string State { get; set; }
+        public string CompanyName { get; set; }
+        public string Title { get; set; }
+        public string JobDescription { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
         public DateTime CreateDate { get; private set; }
         public DateTime DeleteDate { get; private set; }
         #endregion
@@ -27,31 +28,20 @@ namespace JobPosting
             CreateDate = DateTime.UtcNow;
         }
 
-        public JobList(string title, string jobDescription, string city, string state) : this()
-        {
-            Title = title;
-            JobDescription = jobDescription;
-            City = city;
-            State = state;
-        }
+        //public JobList(string title, string jobDescription, string city, string state) : this()
+        //{
+        //    Title = title;
+        //    JobDescription = jobDescription;
+        //    City = city;
+        //    State = state;
+        //}
         #endregion
 
         #region Method
         public void PostJob(JobList jobListPost)
         {
-            Console.WriteLine("Please entry.");
-            Console.Write("Title : ");
-            jobListPost.Title = Console.ReadLine();
-            Console.Write("Job description : ");
-            jobListPost.JobDescription = Console.ReadLine();
-            Console.Write("City : ");
-            jobListPost.City = Console.ReadLine();
-            Console.Write("State : ");
-            jobListPost.State = Console.ReadLine();
-
             // insert new employer account into DB
             // print insert result
-
         }
 
         public void ShowJob()
@@ -66,15 +56,7 @@ namespace JobPosting
 
         public void DeleteJob()
         {
-            // show job and ask to confirm for delete
-            Console.WriteLine("Please entry jib ID.");
-            int jobID = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Please confirm to delete job ID {0} (Y/N).", jobID);
-            char confirm = Console.ReadKey().KeyChar;
-            if (confirm == 'Y')
-            {
-                // delete account from DB
-            }
+            // delete account from DB
         }
 
         public void SearchJob()

@@ -45,18 +45,6 @@ namespace JobPosting
         #region Method
         public void CreateAccount()
         {
-            Console.WriteLine("Please entry.");
-            Console.Write("Username : ");
-            Username = Console.ReadLine();
-            Console.Write("Password : ");
-            Password = Console.ReadLine();
-            Console.Write("Company name : ");
-            CompanyName = Console.ReadLine();
-            Console.Write("Email : ");
-            Email = Console.ReadLine();
-            Console.Write("Phone : ");
-            Phone = Convert.ToInt32(Console.ReadLine()); 
-
             // insert new employer account into DB
             // print insert result
         }
@@ -64,24 +52,12 @@ namespace JobPosting
         public void ResetPassword()
         {
             // fetching password
-            Console.WriteLine("Please confirm to reset your password (Y/N).");
-            char confirm = Console.ReadKey().KeyChar;
-            if (confirm == 'Y')
-            {
-                Console.WriteLine("Please enter your new password.");
-                Password = Console.ReadLine();
-                // update password in DB
-            }
         }
 
         public void DeleteAccount()
         {
-            Console.WriteLine("Please confirm to delete your account (Y/N).");
-            char confirm = Console.ReadKey().KeyChar;
-            if(confirm == 'Y')
-            {
-                // delete account from DB
-            }
+            
+           // delete account from DB
         }
         #endregion
     }
