@@ -12,3 +12,7 @@ C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\Job
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.csproj.CoreCompileInputs.cache
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.exe
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.pdb
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.dll
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.xml
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.SqlServer.xml

@@ -1,24 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace JobPosting
 {
-    class JobList
+    public class JobList
     {
         private static int LastJobID = 0;
 
         #region Properties
+        [Key]
         public int JobID { get; private set; }
+        [Required]
+        [StringLength(50, ErrorMessage ="The company cannot be more than 50 characters in length.")]
         public string CompanyName { get; set; }
+        [Required]
+        [StringLength(50, ErrorMessage = "The job title cannot be more than 50 characters in length.")]
         public string Title { get; set; }
+        [Required]
+        [StringLength(500, ErrorMessage = "The job description cannot be more than 500 characters in length.")]
         public string JobDescription { get; set; }
+        [Required]
+        [StringLength(20, ErrorMessage = "The city of job location cannot be more than 20 characters in length.")]
         public string City { get; set; }
+        [Required]
+        [StringLength(2, ErrorMessage = "The state of job location cannot be more than 2 characters in length.")]
         public string State { get; set; }
         public DateTime CreateDate { get; private set; }
-        public DateTime DeleteDate { get; private set; }
         #endregion
 
         #region Constructors

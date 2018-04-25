@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace JobPosting
 {
    
@@ -107,6 +106,9 @@ namespace JobPosting
                 {
                     switch (option)
                     {
+                        case 0: // Quit App
+                            Console.WriteLine("Thank you for visiting!");
+                            return;
                         case 1: // Create Employer Account
                             Console.WriteLine("Please entry.");
                             Console.Write("Username : ");
@@ -155,13 +157,27 @@ namespace JobPosting
                             break;
                         case 5: // Delete JobList Job
                             // show job and ask to confirm for delete
-                            Console.WriteLine("Please entry jib ID.");
+                            Console.WriteLine("Please entry job ID.");
                             var jobID = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Please confirm to delete job ID {0} (Y/N).", jobID);
                             var confirm = Console.ReadKey().KeyChar;
                             if (confirm == 'Y')
                             {
-                            // delete account from DB
+                                Console.WriteLine("Please entry.");
+                                Console.Write("Company Name : ");
+                                companyName = Console.ReadLine();
+                                Console.Write("Title : ");
+                                title = Console.ReadLine();
+                                Console.Write("Job description : ");
+                                jobDescription = Console.ReadLine();
+                                Console.Write("City : ");
+                                city = Console.ReadLine();
+                                Console.Write("State : ");
+                                state = Console.ReadLine();
+
+                                var deleteJobListPost = Jobs.DeleteJob(companyName, title, jobDescription, city, state);
+                                Console.WriteLine("Delete was successful.");
+                                Console.WriteLine($"JobID:{deleteJobListPost.JobID},  CompanyName: {deleteJobListPost.CompanyName}, Title: {deleteJobListPost.Title}, JobDescription: {deleteJobListPost.JobDescription}, City: {deleteJobListPost.City}, State: {deleteJobListPost.State}, CreatedDate: {deleteJobListPost.CreateDate}");
                             }
                             break;
                         case 6: // Reset Employer Password
@@ -178,6 +194,20 @@ namespace JobPosting
                             confirm = Console.ReadKey().KeyChar;
                             if(confirm == 'Y')
                             {
+                                Console.WriteLine("Please entry.");
+                                Console.Write("Username : ");
+                                username = Console.ReadLine();
+                                Console.Write("Password : ");
+                                password = Console.ReadLine();
+                                Console.Write("Company name : ");
+                                companyName = Console.ReadLine();
+                                Console.Write("Email : ");
+                                email = Console.ReadLine();
+                                Console.Write("Phone : ");
+                                phone = Convert.ToInt32(Console.ReadLine());
+                                var deleteEmployerAccount = Jobs.DeleteEmployerAccount(username, password, companyName, email, phone);
+                                Console.WriteLine("Delete was successful.");
+                                Console.WriteLine($"EmployerID:{deleteEmployerAccount.EmployerID}, Username: {deleteEmployerAccount.Username}, Password: {deleteEmployerAccount.Password}, CompanyName: {deleteEmployerAccount.CompanyName}, Email: {deleteEmployerAccount.Email}, Phone: {deleteEmployerAccount.Phone}, CreatedDate: {deleteEmployerAccount.CreateDate}");
                             }
                             break;
                     }
@@ -187,6 +217,9 @@ namespace JobPosting
                 
                     switch (option)
                     {
+                        case 0: // Quit App
+                            Console.WriteLine("Thank you for visiting!");
+                            return;
                         case 1: // Create JobSeeker Account
                             Console.WriteLine("Please entry.");
                             Console.Write("Username : ");
@@ -233,9 +266,25 @@ namespace JobPosting
                         case 5: // Delete JobSeeker Account
                             Console.WriteLine("Please confirm to delete your account (Y/N).");
                             confirm = Console.ReadKey().KeyChar;
-                            if (confirm == 'Y')
+                            if (confirm == 'Y' || confirm == 'y')
                             {
-                                // delete account from DB
+                                Console.WriteLine("Please entry.");
+                                Console.Write("Username : ");
+                                username = Console.ReadLine();
+                                Console.Write("Password : ");
+                                password = Console.ReadLine();
+                                Console.Write("First name : ");
+                                firstName = Console.ReadLine();
+                                Console.Write("Last name : ");
+                                lastName = Console.ReadLine();
+                                Console.Write("Email : ");
+                                email = Console.ReadLine();
+                                Console.Write("Phone : ");
+                                phone = Convert.ToInt32(Console.ReadLine());
+
+                                var deleteJobSeekerAccount = Jobs.DeleteJobSeekerAccount(username, password, firstName, lastName, email, phone);
+                                Console.WriteLine("Delete was successful.");
+                                Console.WriteLine($"JobSeekerID:{deleteJobSeekerAccount.JobSeekerID}, Username: {deleteJobSeekerAccount.Username}, Password: {deleteJobSeekerAccount.Password}, FirstName: {deleteJobSeekerAccount.FirstName}, LastName: {deleteJobSeekerAccount.LastName}, Email: {deleteJobSeekerAccount.Email}, Phone: {deleteJobSeekerAccount.Phone}, CreatedDate: {deleteJobSeekerAccount.CreateDate}");
                             }
                             break;
                     }
