@@ -16,3 +16,11 @@ C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\Ent
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.xml
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.InitialCreate.resources
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.csproj.GenerateResource.Cache
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions.resources
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions1.resources
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions2.resources
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions3.resources
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions4.resources
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions5.resources

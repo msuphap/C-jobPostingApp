@@ -237,5 +237,24 @@ namespace JobPosting
         {
             return db.JobLists.Where(a => a.Title == searchWord);
         }
+
+        public static void JobSubmission(int jobSeekerID, int jobID)
+        {
+            var jobIDSubmission = db.JobLists.Where(a => a.JobID == jobID).FirstOrDefault();
+            if(jobIDSubmission == null)
+            {
+                //throw exception
+            }
+            jobIDSubmission.SubmitJob();
+
+            var jobSubmission = new JobSubmission
+            {
+                SubmissionDate = DateTime.UtcNow,
+                JobID = jobID,
+                JobSeekerID = jobSeekerID,
+            };
+            db.JobSubmissions.Add(jobSubmission);
+            db.SaveChanges();
+        }
     }
 }

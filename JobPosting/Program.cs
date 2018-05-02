@@ -142,20 +142,14 @@ namespace JobPosting
                             Console.WriteLine($"JobID:{jobListPost.JobID},  CompanyName: {jobListPost.CompanyName}, Title: {jobListPost.Title}, JobDescription: {jobListPost.JobDescription}, City: {jobListPost.City}, State: {jobListPost.State}, CreatedDate: {jobListPost.CreateDate}");
                             break;
                         case 3: // Show Job List
-                            Console.Write("Company Name: ");
-                            companyName = Console.ReadLine();
-
-                            var jobs = Jobs.GetAllJobs(companyName);
-                            foreach (var job in jobs)
-                            {
-                                Console.WriteLine($"JobID: {job.JobID}, Title: {job.Title}, JobDescription: {job.JobDescription}, City: {job.City}, State: {job.State}, CreatedDate: {job.CreateDate}");
-                            }
+                            PrintAllJobs();
                             break;
                         case 4:
                             //JobList jobListEdit = new JobList();
                             //jobListEdit.EditJob();
                             break;
                         case 5: // Delete JobList Job
+                            PrintAllJobs();
                             // show job and ask to confirm for delete
                             Console.WriteLine("Please entry job ID.");
                             var jobID = Convert.ToInt32(Console.ReadLine());
@@ -251,6 +245,13 @@ namespace JobPosting
                         case 3:
                             //JobList jobListSubmit = new JobList();
                             //jobListSubmit.SubmitJob();
+                            Console.Write("Enter your jobSeeker ID: ");
+                            var jobSeekerID = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("Enter job ID that you would like to apply: ");
+                            var jobID = Convert.ToInt32(Console.ReadLine());
+                            Jobs.JobSubmission(jobSeekerID, jobID);
+                            Console.WriteLine("Job submission completes successfully.");
+                            Console.WriteLine($"JobSeekerID:{jobSeekerID}, JobID: {jobID}");
                             break;
                         case 4: // Reset JobSeeker Password
                             // fetching password
@@ -292,7 +293,19 @@ namespace JobPosting
             }
         }
 
-       
+        private static void PrintAllJobs()
+        {
+            string companyName;
+            Console.Write("Company Name: ");
+            companyName = Console.ReadLine();
+
+            var jobs = Jobs.GetAllJobs(companyName);
+            foreach (var job in jobs)
+            {
+                Console.WriteLine($"JobID: {job.JobID}, Title: {job.Title}, JobDescription: {job.JobDescription}, City: {job.City}, State: {job.State}, CreatedDate: {job.CreateDate}");
+            }
+        }
+
 
     }
 }

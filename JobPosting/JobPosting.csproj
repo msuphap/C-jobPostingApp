@@ -56,6 +56,36 @@
     <Compile Include="Employer.cs" />
     <Compile Include="JobList.cs" />
     <Compile Include="JobSeeker.cs" />
+    <Compile Include="JobSubmission.cs" />
+    <Compile Include="Migrations\201804250217430_InitialCreate.cs" />
+    <Compile Include="Migrations\201804250217430_InitialCreate.Designer.cs">
+      <DependentUpon>201804250217430_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292212032_Submissions.cs" />
+    <Compile Include="Migrations\201804292212032_Submissions.Designer.cs">
+      <DependentUpon>201804292212032_Submissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292246447_Submissions1.cs" />
+    <Compile Include="Migrations\201804292246447_Submissions1.Designer.cs">
+      <DependentUpon>201804292246447_Submissions1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292255036_Submissions2.cs" />
+    <Compile Include="Migrations\201804292255036_Submissions2.Designer.cs">
+      <DependentUpon>201804292255036_Submissions2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292315174_Submissions3.cs" />
+    <Compile Include="Migrations\201804292315174_Submissions3.Designer.cs">
+      <DependentUpon>201804292315174_Submissions3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292317123_Submissions4.cs" />
+    <Compile Include="Migrations\201804292317123_Submissions4.Designer.cs">
+      <DependentUpon>201804292317123_Submissions4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804292317449_Submissions5.cs" />
+    <Compile Include="Migrations\201804292317449_Submissions5.Designer.cs">
+      <DependentUpon>201804292317449_Submissions5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +94,29 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804250217430_InitialCreate.resx">
+      <DependentUpon>201804250217430_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292212032_Submissions.resx">
+      <DependentUpon>201804292212032_Submissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292246447_Submissions1.resx">
+      <DependentUpon>201804292246447_Submissions1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292255036_Submissions2.resx">
+      <DependentUpon>201804292255036_Submissions2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292315174_Submissions3.resx">
+      <DependentUpon>201804292315174_Submissions3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292317123_Submissions4.resx">
+      <DependentUpon>201804292317123_Submissions4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804292317449_Submissions5.resx">
+      <DependentUpon>201804292317449_Submissions5.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

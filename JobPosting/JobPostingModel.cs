@@ -24,6 +24,7 @@ namespace JobPosting
         public virtual DbSet<Employer> Employers { get; set; }
         public virtual DbSet<JobSeeker> JobSeekers { get; set; }
         public virtual DbSet<JobList> JobLists { get; set; }
+        public virtual DbSet<JobSubmission> JobSubmissions { get; set; }
     }
 
     //public class MyEntity

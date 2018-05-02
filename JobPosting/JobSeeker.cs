@@ -30,6 +30,8 @@ namespace JobPosting
         public DateTime CreateDate { get; private set; }
         #endregion
 
+        public virtual ICollection<JobSubmission> JobSubmissions { get; set; }
+
         #region Constructors
         public JobSeeker()
         {
