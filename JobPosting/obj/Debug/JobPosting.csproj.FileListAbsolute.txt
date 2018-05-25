@@ -5,12 +5,9 @@ C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\obj\Debug\JobPo
 C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\obj\Debug\JobPosting.csproj.CoreCompileInputs.cache
 C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\obj\Debug\JobPosting.exe
 C:\Users\Muchchima\Documents\Kal_C\Project\JobPosting\JobPosting\obj\Debug\JobPosting.pdb
-C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\JobPosting.exe.config
-C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\JobPosting.exe
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\JobPosting.pdb
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.csprojResolveAssemblyReference.cache
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.csproj.CoreCompileInputs.cache
-C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.exe
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.pdb
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.dll
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\EntityFramework.SqlServer.dll
@@ -24,3 +21,6 @@ C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\Job
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions3.resources
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions4.resources
 C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.Migrations.Submissions5.resources
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\JobPosting.dll.config
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\bin\Debug\JobPosting.dll
+C:\Users\Muchchima\Documents\Kal_C\Github\jobPostingApp\JobPosting\obj\Debug\JobPosting.dll

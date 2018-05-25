@@ -24,6 +24,7 @@ namespace JobPosting
         [Description("Show posted job")] ShowPostedJob,
         [Description("Edit posted job")] EditPostedJob,
         [Description("Delete posted job")] DeletePostedJob,
+        [Description("Show job submission")] JobSubmission,
         [Description("Reset account password")] ResetAccountPassword,
         [Description("Delete account")] DeleteAccount
     }
@@ -142,48 +143,95 @@ namespace JobPosting
                             Console.WriteLine($"JobID:{jobListPost.JobID},  CompanyName: {jobListPost.CompanyName}, Title: {jobListPost.Title}, JobDescription: {jobListPost.JobDescription}, City: {jobListPost.City}, State: {jobListPost.State}, CreatedDate: {jobListPost.CreateDate}");
                             break;
                         case 3: // Show Job List
-                            PrintAllJobs();
+                            try
+                            {
+                                PrintAllJobs();
+                            }
+                            catch (ArgumentNullException ax)
+                            {
+                                Console.WriteLine($"Error - {ax.Message}. Please try again!");
+                            }
                             break;
                         case 4:
                             //JobList jobListEdit = new JobList();
                             //jobListEdit.EditJob();
                             break;
                         case 5: // Delete JobList Job
-                            PrintAllJobs();
-                            // show job and ask to confirm for delete
-                            Console.WriteLine("Please entry job ID.");
-                            var jobID = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("Please confirm to delete job ID {0} (Y/N).", jobID);
-                            var confirm = Console.ReadKey().KeyChar;
-                            if (confirm == 'Y')
+                            try
                             {
-                                Console.WriteLine("Please entry.");
-                                Console.Write("Company Name : ");
-                                companyName = Console.ReadLine();
-                                Console.Write("Title : ");
-                                title = Console.ReadLine();
-                                Console.Write("Job description : ");
-                                jobDescription = Console.ReadLine();
-                                Console.Write("City : ");
-                                city = Console.ReadLine();
-                                Console.Write("State : ");
-                                state = Console.ReadLine();
+                                PrintAllJobs();
+                                // show job and ask to confirm for delete
+                                Console.WriteLine("Please entry job ID.");
+                                var jobID = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Please confirm to delete job ID {0} (Y/N).", jobID);
+                                var confirm_del_job = Console.ReadKey().KeyChar;
+                                if (confirm_del_job == 'Y')
+                                {
+                                    Console.WriteLine("Please entry.");
+                                    Console.Write("Company Name : ");
+                                    companyName = Console.ReadLine();
+                                    Console.Write("Title : ");
+                                    title = Console.ReadLine();
+                                    Console.Write("Job description : ");
+                                    jobDescription = Console.ReadLine();
+                                    Console.Write("City : ");
+                                    city = Console.ReadLine();
+                                    Console.Write("State : ");
+                                    state = Console.ReadLine();
 
-                                var deleteJobListPost = Jobs.DeleteJob(companyName, title, jobDescription, city, state);
-                                Console.WriteLine("Delete was successful.");
-                                Console.WriteLine($"JobID:{deleteJobListPost.JobID},  CompanyName: {deleteJobListPost.CompanyName}, Title: {deleteJobListPost.Title}, JobDescription: {deleteJobListPost.JobDescription}, City: {deleteJobListPost.City}, State: {deleteJobListPost.State}, CreatedDate: {deleteJobListPost.CreateDate}");
+                                    var deleteJobListPost = Jobs.DeleteJob(companyName, title, jobDescription, city, state);
+                                    Console.WriteLine("Delete was successful.");
+                                    Console.WriteLine($"JobID:{deleteJobListPost.JobID},  CompanyName: {deleteJobListPost.CompanyName}, Title: {deleteJobListPost.Title}, JobDescription: {deleteJobListPost.JobDescription}, City: {deleteJobListPost.City}, State: {deleteJobListPost.State}, CreatedDate: {deleteJobListPost.CreateDate}");
+                                }
+                            }
+                            catch (ArgumentNullException ax)
+                            {
+                                Console.WriteLine($"Error - {ax.Message}. Please try again!");
+                            }
+                            catch (ArgumentException ax)
+                            {
+                                Console.WriteLine($"Error - {ax.Message}. Please try again!");
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine($"Job ID is not in the right format.");
                             }
                             break;
-                        case 6: // Reset Employer Password
+                        case 6: // Show job submission
+                            try
+                            {
+                                PrintAllJobs();
+                                Console.WriteLine("Please entry job ID.");
+                                var jobID = Convert.ToInt32(Console.ReadLine());
+                                var jobSubmissions = Jobs.GetJobSubmissions(jobID);
+                                foreach (var jobSubmission in jobSubmissions)
+                                {
+                                    Console.WriteLine($"JobSeekerID:{jobSubmission.JobSeekerID}, Submission:{jobSubmission.SubmissionDate}");
+                                }
+                            }
+                            catch (ArgumentNullException ax)
+                            {
+                                Console.WriteLine($"Error - {ax.Message}. Please try again!");
+                            }
+                            catch (ArgumentException ax)
+                            {
+                                Console.WriteLine($"Error - {ax.Message}. Please try again!");
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine($"Job ID is not in the right format.");
+                            }
+                            break;
+                        case 7: // Reset Employer Password
                             Console.WriteLine("Please confirm to reset your password (Y/N).");
-                            confirm = Console.ReadKey().KeyChar;
+                            var confirm = Console.ReadKey().KeyChar;
                             if (confirm == 'Y')
                             {
                                 Console.WriteLine("Please enter your new password.");
                                 password = Console.ReadLine();
                             }
                             break;
-                        case 7: // Delete Employer Account
+                        case 8: // Delete Employer Account
                             Console.WriteLine("Please confirm to delete your account (Y/N).");
                             confirm = Console.ReadKey().KeyChar;
                             if(confirm == 'Y')
@@ -298,7 +346,10 @@ namespace JobPosting
             string companyName;
             Console.Write("Company Name: ");
             companyName = Console.ReadLine();
-
+            if (string.IsNullOrEmpty(companyName))
+            {
+                throw new ArgumentNullException("Company name is required");
+            }
             var jobs = Jobs.GetAllJobs(companyName);
             foreach (var job in jobs)
             {

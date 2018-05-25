@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JobPosting
 {
-   static class Jobs
+   public static class Jobs
     {
         private static JobPostingModel db = new JobPostingModel();
         /// <summary>
@@ -238,21 +238,34 @@ namespace JobPosting
             return db.JobLists.Where(a => a.Title == searchWord);
         }
 
+        public static IEnumerable<JobSubmission> GetJobSubmissions(int jobID)
+        {
+            return db.JobSubmissions.Where(j => j.JobID == jobID).OrderBy(j => j.SubmissionDate);
+        }
+
+        public static JobSeeker GetJobSeekerDetail(int jobSeekerID)
+        {
+            return db.JobSeekers.Find(jobSeekerID);
+        }
+
         public static void JobSubmission(int jobSeekerID, int jobID)
         {
             var jobIDSubmission = db.JobLists.Where(a => a.JobID == jobID).FirstOrDefault();
             if(jobIDSubmission == null)
             {
                 //throw exception
+                throw new ArgumentNullException("jobIDSubmission", "jobIDSubmission not found");
             }
             jobIDSubmission.SubmitJob();
-
+            //var jobSeekerDetials = Jobs.GetJobSeekerDetail(jobSeekerID);
+            
             var jobSubmission = new JobSubmission
             {
-                SubmissionDate = DateTime.UtcNow,
-                JobID = jobID,
-                JobSeekerID = jobSeekerID,
+                    SubmissionDate = DateTime.UtcNow,
+                    JobID = jobID,
+                    JobSeekerID = jobSeekerID,
             };
+
             db.JobSubmissions.Add(jobSubmission);
             db.SaveChanges();
         }
